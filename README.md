@@ -1,6 +1,7 @@
 # GUI Quiz Application using Tkinter and Open Trivia DB
 
-
+[![GitHub release](https://img.shields.io/github/release/akashgiricse/lets-quiz.svg)](https://img.shields.io/bower/vpre/bootstrap.svg)
+[![GitHub license](https://img.shields.io/github/license/akashgiricse/lets-quiz.svg)](https://github.com/akashgiricse/lets-quiz/blob/master/LICENSE)
 
 This is an quiz application using tkinter and with the help of trivia DB. The task is to ask multiple-choice questions, collect user answers and finally display the results.
 
@@ -20,9 +21,22 @@ We'll use the following modules and concepts in this project:
 
 • Python Classes are a blueprint for creating objects. Objects are real-world entities. During the entire project development, we'll be separating our different functionalities into different classes and methods.
 
+## Workflow of the Project
 
-[![GitHub release](https://img.shields.io/github/release/akashgiricse/lets-quiz.svg)](https://img.shields.io/bower/vpre/bootstrap.svg)
-[![GitHub license](https://img.shields.io/github/license/akashgiricse/lets-quiz.svg)](https://github.com/akashgiricse/lets-quiz/blob/master/LICENSE)
+ 1.We'll fetch questions from the Open Trivia DB API.
+
+ 2.For each fetched question, we'll create a different object using a Question class. All these Question objects will be appended to a `question_bank` list.
+
+ 3.This `question_bank` will be passed to the brain of the application, QuizBrainand a `quiz` object will be created.This class will be responsible for checking if there are more questions, for getting the next question, calculating the score, and so on.
+
+ 4.Finally, this `quiz` object will be passed to the QuizInterface class, and the user will be able to interact with it.
+
+## Fetching Questions
+
+As we discussed above, we’ll be using the Open Trivia DB API to get the questions. Head over to [their API](https://opentdb.com/api/_config.php), select the number of questions, category, and difficulty. The question type should be Multiple Choice and the encoding should be Default Encoding. Click on Generate API URL and you’ll get an API URL.
+
+Sample API URL: `<https://opentdb.com/api.php?amount=10&type=multiple>`
+
 
 ## Current Features
 
